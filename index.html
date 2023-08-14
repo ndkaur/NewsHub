@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Hub </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--  main navbar that will contain logo , nav links of differents type of news  -->
+    <nav>
+        <div class="main-nav container flex">
+            <!-- logo comes here -->
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="./assets/news hub.png" alt="company-logo">
+            </a>
+            <!-- logo ends here -->
+
+            <!-- all the links news of politics, IPL, finance comes here on navbar -->
+            <div class="nav-links">
+                <!--  we want all the link to be in flex in a row  -->
+                <ul class="flex"> 
+                    <!-- // creting a function query onClick -->
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                </ul>
+            </div>
+
+            <!-- the option of search on the navbar at the right most corner -->
+            <div class="serach-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- main page info things  -->
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+        </div>
+    </main>
+ 
+       <!--  use template cause we have to call an api for news 
+    and we want many cards to show dynamically  -->
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <!-- this is the temporary info it will be replaced -->
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html> 
